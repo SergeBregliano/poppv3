@@ -5,30 +5,30 @@ services:
     container_name: popp_apache
     restart: always
     ports:
-    - 80:80
+      - 80:80
     volumes:
-    - .docker/config/vhosts:/etc/apache2/sites-enabled
-    - ./apps/popp:/home/www/popp
+      - .docker/config/vhosts:/etc/apache2/sites-enabled
+      - ./apps/popp:/home/www/popp
     depends_on:
-    - php
+      - php
 
   php:
     build: .docker/php
     container_name: popp_php
     restart: always
     volumes:
-    - ./apps/popp/:/home/www/popp
-    - "/etc/timezone:/etc/timezone:ro"
-    - "/etc/localtime:/etc/localtime:ro"
+      - ./apps/popp/:/home/www/popp
+      - "/etc/timezone:/etc/timezone:ro"
+      - "/etc/localtime:/etc/localtime:ro"
     depends_on:
-    - postgres
+      - postgres
         
   postgres:
     container_name: popp_postgres
     image: postgres:13.1-alpine
     restart: always
     ports:
-    - "5432:5432"
+      - "5432:5432"
     env_file:
       - ./apps/popp/.env # configure postgres
     volumes:
@@ -38,7 +38,7 @@ services:
     image: adminer
     restart: always
     ports:
-    - 8080:8080
+      - 8080:8080
 
 volumes:
   postgres-data: # named volumes can be managed easier using docker-compose
