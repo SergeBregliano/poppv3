@@ -46,8 +46,8 @@ export const PARAMETRES = {
                 "sSortDescending": ": activer pour trier la colonne par ordre d&eacute;croissant"
             }
     },
-    mapLongitude: 3.157614983773315,
-    mapLatitude: 45.65378916241638,
+    mapLongitude: -2.50,
+    mapLatitude: 48.05,
     mapZoom: 8,
     autoLoadSeries: false,
     linkSelectCommune: false,
@@ -57,10 +57,10 @@ export const PARAMETRES = {
     titleJsonLayer: "Familles Paysagères",
     fileJsonTextField: "f1",*/
     layers: [{
-    //   fileJsonPath: "/files/carto/ensembles_familles_paysages_4326.json",
-    //   titleJsonLayer: "Familles Paysagères",
-    //   fileJsonTextField: "f1",
-    //   attributions: ""
+      fileJsonPath: "/files/carto/ensembles_familles_paysages_4326.json",
+      titleJsonLayer: "Familles Paysagères",
+      fileJsonTextField: "f1",
+      attributions: ""
     }
   ],
     sourceLayerSat: new WMTS ({
