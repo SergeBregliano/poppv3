@@ -65,9 +65,14 @@ Puisqu'elle est co-construite avec les porteurs OPP, la plateforme correspond au
 $ git clone https://username:git.geofit.fr/geofit/popp-docker.git
 ```
 
-configurer le fichier apps/popp/.env
+##### Paramétrages
 
-Installer et lancer les dockers
+Dupliquer le fichier ``sample.env`` et renommer en ``.env``. configurer le fichier ``apps/popp/.env``.
+
+Pour travailler en local, dupliquer le fichier ``docker-compose.override-sample.yml`` en ``docker-compose.override.yml``.
+
+##### Installer et lancer les dockers
+
 ```shell
 $ docker-compose build
 ```
@@ -173,7 +178,6 @@ url de récupération des fichiers : URL_FOLDER_FILES -> http://127.0.0.1:8000/f
 
 
 **Application paramètrée avec succès !**
-
 
 
 
