@@ -9,7 +9,7 @@ RUN apt-get update \
     
 RUN docker-php-ext-configure gd --enable-gd --with-freetype --with-jpeg --with-webp \
     && docker-php-ext-install gd
-RUN docker-php-ext-install pdo pdo_mysql pdo_pgsql zip
+RUN docker-php-ext-install pdo pdo_pgsql zip
 COPY php.ini /usr/local/etc/php/php.ini
 COPY php-fpm-pool.conf /usr/local/etc/php/pool.d/www.conf
 
