@@ -1,62 +1,59 @@
-version: '3'
+version: '4'
 services:
   apache:
     build: .docker/apache
     container_name: popp_apache
-    restart: always
-    ports:
-      - 80:80
+    restart: unless-stopped
     volumes:
       - .docker/config/vhosts:/etc/apache2/sites-enabled
       - ./apps/popp:/home/www/popp
+    environment:
+      VIRTUAL_HOST: ${VIRTUAL_HOST} # used with https-portal
     depends_on:
       - php
+    networks:
+      - internal
+      - gateway
 
   php:
     build: .docker/php
     container_name: popp_php
-    restart: always
+    restart: unless-stopped
     volumes:
       - ./apps/popp/:/home/www/popp
-      - "/etc/timezone:/etc/timezone:ro"
-      - "/etc/localtime:/etc/localtime:ro"
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
     depends_on:
       - postgres
+    networks:
+      - internal
         
   postgres:
     container_name: popp_postgres
     image: postgres:13.1-alpine
-    restart: always
-    ports:
-      - "5432:5432"
+    restart: unless-stopped
     env_file:
       - ./apps/popp/.env # configure postgres
     volumes:
       - postgres-data:/var/lib/postgresql/data/ # persist data even if container shuts down
+    networks:
+      - internal
   
   adminer:
     image: adminer
-    restart: always
-    ports:
-      - 8080:8080
+    restart: unless-stopped
+    environment:
+      VIRTUAL_HOST: adminer.${VIRTUAL_HOST} # used with https-portal
+    networks:
+      - internal
+      - gateway
 
 volumes:
   postgres-data: # named volumes can be managed easier using docker-compose
-  
 
-#  app:
-#    build:
-#      context: .
-#      dockerfile: docker/Dockerfile
-#    depends_on:
-#    - "db"
-#    image: symfony
-#    ports:
-#    - 81:80
-#    volumes:
-#    - .:/app/
-#    environment:
-#      DATABASE_URL: "pgsql://postgres:uxK4(m8h@db:5432/popp"
-#      APP_ENV: dev
-#      APP_SECRET: "b9abc19ae10d53eb7cf5b5684ec6511f"
-#      MAILER_URL: "null://localhost"
+networks:
+  gateway:
+    name: ${FRONTEND_NETWORK}
+
+  internal:
+    name: ${BACKEND_NETWORK}

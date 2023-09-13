@@ -1,0 +1,13 @@
+version: '4'
+services:
+  apache:
+    ports:
+      - 80:80
+        
+  postgres:
+    ports:
+      - 5432:5432
+  
+  adminer:
+    ports:
+      - 8080:8080
