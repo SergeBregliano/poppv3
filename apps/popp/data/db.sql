@@ -351,8 +351,7 @@ CREATE TABLE lien_externe (
 );
 /* users */
 DROP TABLE if exists users;
-CREATE TABLE public.users
-(
+CREATE TABLE public.users (
   id serial PRIMARY KEY,
   email character varying(180) NOT NULL,
   roles json NOT NULL,
@@ -365,7 +364,7 @@ CREATE TABLE public.users
   code_postal character varying(255),
   ville character varying(255),
   telephone character varying(255),
-	datederpub timestamp without time zone;
+  datederpub timestamp without time zone
 );
 
 /* l_gestionnaire_opp */
