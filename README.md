@@ -122,6 +122,12 @@ $ php bin/console c:c
 ```shell
 $ chown -R www-data:www-data var/cache
 ```
+```shell
+$ chown -R www-data:www-data public/files/
+```
+
+
+
 #### Dans le code :
 
 ##### Mettre les données locales par défault sur Occitanie 
