@@ -16,6 +16,7 @@
 /public/files/*
 !/public/files/custom/
 !/public/files/carto/
+!/public/files/import/
 ###< symfony/webpack-encore-pack ###
 
 ###> friendsofphp/php-cs-fixer ###
