@@ -25,6 +25,8 @@ labelSuccessAddSeries: séries ajoutées au panier
 labelSuccessAddSerie: série ajoutée au panier
 labelAlreadyAddedSerie: série déjà présente dans le panier 
 labelDeletedSerie: Série supprimée du panier 
+login: Connexion
+logout: Déconnexion
 msgErreurLimitExport: L'export est limité à 100 séries
 TextIntroPanier: >
   Vous trouvez toutes les séries que vous avez sélectionnées dans la POPP-Breizh. 

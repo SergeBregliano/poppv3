@@ -391,7 +391,7 @@
         {%  if app.user == true %}
                             <a href="{{ path('fos_user_security_logout') }}" class="dropdown-toggle no-after peers fxw-nw ai-c lh-1">
                                 <div class="peer">
-                                    <span class="fsz-sm c-grey-900"><i class="c-red-500 ti-power-off"></i> Logout</span>
+                                    <span class="fsz-sm c-grey-900"><i class="c-red-500 ti-power-off"></i> {{ "logout"|trans }}</span>
                                 </div>
                             </a>	
                             <div class="peer">
@@ -410,7 +410,7 @@
         {% else %}	
                             <a href="{{ path('fos_user_security_login') }}" class="dropdown-toggle no-after peers fxw-nw ai-c lh-1">
                                 <div class="peer">
-                                    <span class="fsz-sm c-grey-900"><i class="ti-power-off" style="color:#ff7109"></i> Login</span>
+                                    <span class="fsz-sm c-grey-900"><i class="ti-power-off" style="color:#ff7109"></i> {{ "login"|trans }}</span>
                                 </div>
                             </a>
         {% endif %}   
