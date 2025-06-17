@@ -4,3 +4,4 @@
 ###> docker ###
 .docker/data/*
 ###< docker ###
+docker-compose.override.yml

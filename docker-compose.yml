@@ -1,4 +1,3 @@
-version: '3'
 services:
   apache:
     build: .docker/apache
@@ -42,21 +41,11 @@ services:
 
 volumes:
   postgres-data: # named volumes can be managed easier using docker-compose
-  
 
-#  app:
-#    build:
-#      context: .
-#      dockerfile: docker/Dockerfile
-#    depends_on:
-#    - "db"
-#    image: symfony
-#    ports:
-#    - 81:80
-#    volumes:
-#    - .:/app/
-#    environment:
-#      DATABASE_URL: "pgsql://postgres:uxK4(m8h@db:5432/popp"
-#      APP_ENV: dev
-#      APP_SECRET: "b9abc19ae10d53eb7cf5b5684ec6511f"
-#      MAILER_URL: "null://localhost"
+networks:
+  gateway:
+    name: ${FRONTEND_NETWORK}
+    external: true
+
+  internal:
+    name: ${BACKEND_NETWORK}
