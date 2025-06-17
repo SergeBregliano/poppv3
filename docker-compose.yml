@@ -1,4 +1,3 @@
-version: '4'
 services:
   apache:
     build: .docker/apache
@@ -54,6 +53,7 @@ volumes:
 networks:
   gateway:
     name: ${FRONTEND_NETWORK}
+    external: true
 
   internal:
     name: ${BACKEND_NETWORK}
