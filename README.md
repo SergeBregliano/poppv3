@@ -96,7 +96,24 @@ $ php composer.phar install
 ```
 
 Les scripts de bases de données sont dans le dossier apps/popp/data
-A lancer à la main pour le moment
+À lancer à la main pour le moment :
+
+- db.sql
+- communes.sql
+- departements.sql
+- region.sql
+- pays.sql
+- ensemble_paysager.sql
+- format.sql
+- langues.sql
+- licence.sql
+- unite_paysagere.sql
+- axe_thematique.sql
+- thesaurus_tree_bzh.sql
+- typologie_paysage_bzh.sql
+- update_bzh.sql
+- carrousel.sql
+- parameters_occ.sql
 
 Modifier les fichiers chosen-sprite.png et chosen-sprite@2x.png dans le dossier node_modules/chosen-js/ par les fichiers dans public/assets/images/
 
