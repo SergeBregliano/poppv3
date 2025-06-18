@@ -16,7 +16,7 @@ ALTER TABLE carrousel_photo
     ADD CONSTRAINT fk_carrousel_actualite_id FOREIGN KEY (carrousel_actualite_id) REFERENCES actualites (actualite_id)
 ON UPDATE NO ACTION ON DELETE NO ACTION;
 
-/*ALTER TABLE public.carrousel_photo
-    ADD COLUMN carrousel_photo_titre character varying;*/
+-- ALTER TABLE public.carrousel_photo
+--     ADD COLUMN carrousel_photo_titre character varying;
 
 
